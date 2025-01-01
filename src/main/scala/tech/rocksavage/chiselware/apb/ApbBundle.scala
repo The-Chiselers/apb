@@ -7,8 +7,8 @@ package tech.rocksavage.chiselware.apb
 import chisel3._
 
 class ApbBundle(p: ApbParams) extends Bundle {
-  val PCLK    = Input(Clock())
-  val PRESETn = Input(AsyncReset())
+//  val PCLK    = Input(Clock())
+//  val PRESETn = Input(AsyncReset())
   val PSEL    = Input(Bool())                 // Peripheral select
   val PENABLE = Input(Bool())                 // Enable signal
   val PWRITE  = Input(Bool())                 // Read/Write signal
