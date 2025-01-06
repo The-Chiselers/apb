@@ -11,17 +11,14 @@ class ApbInterface(
 ) extends Module {
   val io = IO(new Bundle {
     val apb = new ApbBundle(p)
-    val mem = new MemoryBundle(p)
+    val mem = Flipped(new MemoryBundle(p))
   })
   // State register
   val state = RegInit(ApbState.IDLE)
 
-//  override protected def implicitClock: Clock = io.apb.PCLK
-//  override protected def implicitReset: Reset = io.apb.PRESETn
-
   // Default outputs
   io.apb.PREADY  := false.B
-  io.apb.PSLVERR := false.B
+  io.apb.PSLVERR := io.mem.error
   io.apb.PRDATA  := 0.U
 
   // Memory interface defaults

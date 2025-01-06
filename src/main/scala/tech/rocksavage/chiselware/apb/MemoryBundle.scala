@@ -11,4 +11,5 @@ class MemoryBundle(p: ApbParams) extends Bundle {
   val rdata = Output(UInt(p.PDATA_WIDTH.W))  // Read data
   val write = Input(Bool())                // Write enable
   val read  = Input(Bool())                // Read enable
+  val error = Output(Bool())                // Error signal
 }
