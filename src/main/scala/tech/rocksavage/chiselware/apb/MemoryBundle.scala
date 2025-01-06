@@ -4,10 +4,11 @@
 package tech.rocksavage.chiselware.apb
 import chisel3._
 
+
 class MemoryBundle(p: ApbParams) extends Bundle {
-  val addr  = Output(UInt(p.PADDR_WIDTH.W)) // Address
-  val wdata = Output(UInt(p.PDATA_WIDTH.W)) // Write data
-  val rdata = Input(UInt(p.PDATA_WIDTH.W))  // Read data
-  val write = Output(Bool())                // Write enable
-  val read  = Output(Bool())                // Read enable
+  val addr  = Input(UInt(p.PADDR_WIDTH.W)) // Address
+  val wdata = Input(UInt(p.PDATA_WIDTH.W)) // Write data
+  val rdata = Output(UInt(p.PDATA_WIDTH.W))  // Read data
+  val write = Input(Bool())                // Write enable
+  val read  = Input(Bool())                // Read enable
 }
