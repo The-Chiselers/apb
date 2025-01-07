@@ -4,7 +4,7 @@
 // File: ApbParams.scala
 package tech.rocksavage.chiselware.apb
 
-/** Default parameter settings for Dynamic FIFO
+/** Default parameter settings for ApbBundle
   *
   * @constructor
   *   default parameter settings
