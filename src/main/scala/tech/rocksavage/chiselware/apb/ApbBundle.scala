@@ -6,6 +6,7 @@ package tech.rocksavage.chiselware.apb
 
 import chisel3._
 
+// From perspective of APB as slave
 class ApbBundle(p: ApbParams) extends Bundle {
 //  val PCLK    = Input(Clock())
 //  val PRESETn = Input(AsyncReset())
