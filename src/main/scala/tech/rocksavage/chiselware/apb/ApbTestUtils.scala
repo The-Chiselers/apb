@@ -1,7 +1,7 @@
 // (c) 2024 Rocksavage Technology, Inc.
 // This code is licensed under the Apache Software License 2.0 (see LICENSE.MD)
 
-// File: ApbBundle.scala
+// File: ApbTestUtils.scala
 package tech.rocksavage.chiselware.apb
 
 import chisel3._
