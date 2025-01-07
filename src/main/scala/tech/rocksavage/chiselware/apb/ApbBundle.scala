@@ -8,8 +8,6 @@ import chisel3._
 
 // From perspective of APB as slave
 class ApbBundle(p: ApbParams) extends Bundle {
-//  val PCLK    = Input(Clock())
-//  val PRESETn = Input(AsyncReset())
   val PSEL    = Input(Bool())                 // Peripheral select
   val PENABLE = Input(Bool())                 // Enable signal
   val PWRITE  = Input(Bool())                 // Read/Write signal
