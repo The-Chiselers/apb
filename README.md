@@ -1,5 +1,16 @@
 # APB Library
 
+## Setup
+
+### Git 
+
+```bash
+git clone [url].git
+git submodule update --init --recursive
+touch .git-blame-ignore-revs
+git config blame.ignoreRevsFile .git-blame-ignore-revs
+``` 
+
 ## Overview
 
 The `APB Library` provides a set of tools and modules for implementing Advanced Peripheral Bus (APB) interfaces in hardware designs using Chisel. The library includes modules for defining APB bundles, managing address decoding, and integrating with other hardware components. It simplifies the process of creating memory-mapped I/O systems and ensures compliance with the APB protocol.
