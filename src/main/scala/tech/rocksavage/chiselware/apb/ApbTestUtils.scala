@@ -11,6 +11,7 @@ object ApbTestUtils {
     def writeAPB(apb: ApbBundle, addr: UInt, data: UInt)(implicit
         clock: Clock
     ): Unit = {
+        
         // Set up for writing to the specified APB address
         apb.PSEL.poke(1.U)    // Select APB slave
         clock.step(1)         // Simulate one clock cycle
