@@ -11,7 +11,7 @@ object ApbTestUtils {
     def writeAPB(apb: ApbBundle, addr: UInt, data: UInt)(implicit
         clock: Clock
     ): Unit = {
-        
+
         // Set up for writing to the specified APB address
         apb.PSEL.poke(1.U)    // Select APB slave
         clock.step(1)         // Simulate one clock cycle
@@ -31,8 +31,8 @@ object ApbTestUtils {
         clock: Clock
     ): Unit = {
         // Set up for writing to the specified APB address
-        apb.PSEL.poke(1.U)    // Select APB slave
-        clock.step(1)         // Simulate one clock cycle
+        apb.PSEL.poke(1.U) // Select APB slave
+//        clock.step(1)         // Simulate one clock cycle
         apb.PENABLE.poke(1.U) // Enable APB transaction
         apb.PWRITE.poke(1.U)  // Set to write mode
         apb.PADDR.poke(addr)  // Provide the target address
@@ -45,6 +45,7 @@ object ApbTestUtils {
     }
 
     def readAPB(apb: ApbBundle, addr: UInt)(implicit clock: Clock): BigInt = {
+        clock.setTimeout(1000)
         // Set up for reading from the specified APB address
         apb.PSEL.poke(1.U)    // Select APB slave
         clock.step(1)         // Simulate one clock cycle
