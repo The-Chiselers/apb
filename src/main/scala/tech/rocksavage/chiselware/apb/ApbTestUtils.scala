@@ -45,7 +45,6 @@ object ApbTestUtils {
     }
 
     def readAPB(apb: ApbBundle, addr: UInt)(implicit clock: Clock): BigInt = {
-        clock.setTimeout(1000)
         // Set up for reading from the specified APB address
         apb.PSEL.poke(1.U)    // Select APB slave
         clock.step(1)         // Simulate one clock cycle
