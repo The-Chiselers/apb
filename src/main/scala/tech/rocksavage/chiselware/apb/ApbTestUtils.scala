@@ -20,8 +20,8 @@ object ApbTestUtils {
         apb.PADDR.poke(addr)  // Provide the target address
         apb.PWDATA.poke(data) // Provide the data to write
 
-        clock.step(1) // Simulate second clock cycle for write setup
-
+        clock.step(1)         // Simulate second clock cycle for write setup
+        apb.PWRITE.poke(0.U)  // Set to write mode
         apb.PSEL.poke(0.U)    // Deselect APB slave
         apb.PENABLE.poke(0.U) // Disable APB transaction
         clock.step(2)         // Step ahead for the next APB transaction
@@ -38,8 +38,8 @@ object ApbTestUtils {
         apb.PADDR.poke(addr)  // Provide the target address
         apb.PWDATA.poke(data) // Provide the data to write
 
-        clock.step(1) // Simulate second clock cycle for write setup
-
+        clock.step(1)         // Simulate second clock cycle for write setup
+        apb.PWRITE.poke(0.U)  // Set to write mode
         apb.PSEL.poke(0.U)    // Deselect APB slave
         apb.PENABLE.poke(0.U) // Disable APB transaction
     }
